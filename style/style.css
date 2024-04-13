@@ -1,5 +1,42 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'campus';
+    src: url(../fonts/campus/CAMPUS\ PERSONAL\ USE.ttf) 
+    format(truetype);
+}
+
+@font-face {
+    font-family: 'elegant type';
+    src: url(../fonts/elegant_typewriter/ELEGANT\ TYPEWRITER\ Regular.ttf) url(../fonts/elegant_typewriter/ELEGANT\ TYPEWRITER\ Bold.ttf) 
+    format(truetype);
+}
+
+@font-face {
+    font-family: 'nexarust';
+    src: url(../fonts/nexa_rust/NexaRustSans-Trial-Black2.ttf) 
+    format(truetype);
+}
+
+@font-face {
+    font-family: 'magical';
+    src: url(../fonts/magical_night_3/Magical\ Night.ttf) 
+    format(truetype);
+}
+
+@font-face {
+    font-family: 'academy';
+    src: url(../fonts/academy/Academy.ttf) url(../fonts/academy/AcademyFilled3D.ttf) 
+    format(truetype);
+}
+
+@font-face {
+    font-family: 'varsity';
+    src: url(../fonts/varsity/varsity_regular.ttf) 
+    format(truetype);
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -10,8 +47,12 @@
     --color-001: black;
     --color-002: white;
 
-    --font-001:
-    --font-002:
+    --font-001: 'elegant type';
+    --font-002: 'campus';
+    --font-003: 'nexarust';
+    --font-004: 'magical';
+    --font-005: 'academy';
+    --font-006: 'varsity';
 }
 
 
@@ -21,8 +62,9 @@ body {
 }
 
 .header {
-    background-image: url(../assets/wallpaper-burg.png);
+    background-image: url(../assets/wallpaper02.jpg);
     background-attachment: fixed;
+    background-position: bottom center;
     background-size: cover;
     width: 100%;
     height: 340px;  
@@ -37,41 +79,45 @@ body {
     justify-content: center;
     align-items: center;
 }
-.header > div > span {
-    color: white;
-    font-size: 1.3rem;
+
+.title {
+    font-family: var(--font-003);
+    font-size: 2.875em;
+    line-height: 2.25em;
+    margin-top: 0;
+    color: #ffffff;
+    
+}
+
+
+.address {
+    color: #ffffff;
+    font-family: var(--font-003);
+    font-size: 1rem;
     text-shadow: 1px 1px 5px black;
-    padding-bottom: 1.3rem;
+    margin-bottom: 0.1rem;
 
 }
 
 .horario > span {
-    background-color: aquamarine;
-    padding: 0.5rem;
-    margin: 0.5rem;
+    background-color: #228422a4;
+    margin: 0.1rem;
+    padding: 0.1rem;
     border-radius: 3px;
 }
 
 .img {
     
-    padding: 0.5rem;
-    width: 9rem;
-    height: 9rem;
+    margin-top: 1.5rem;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    box-shadow: 1px 1px 2px;
+    box-shadow: 0px 0px 1px;
 }
-.img:hover {
-    transform: translate(1.1);
 
-}
-.title {
-    font-size: 1.875em;
-    line-height: 2.25em;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-    color: white;
-}
+
+
+
 
 
 
