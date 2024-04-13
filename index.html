@@ -3,12 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/output.css">
+    <link rel="stylesheet" href="style/style.css">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <title>Projeto Hamburgueria</title>
 </head>
 <body>
+    
+<header class="header">
 
-    <h1>Wilson Hamburgueria</h1>
+    <div>
+        <img src="./assets/logo.png" 
+        alt="logo-burguer"
+        class="img"/>
+
+        <h1 class="title">Wilson Burguer</h1>
+
+        <span>Rua Albert Sabin, 70 Caruaru - PE
+
+        </span>
+
+            <div class="horario">
+                <span>Seg à Dom - 17:00 as 23:00</span>
+            </div>
+
+    </div>
+
+</header>
+
+    <h2>
+         Conheça nosso menu
+    </h2>
+
+<!-- INICIO MENU-->
+
+<main class="container">
+
+    <!-- INICIO PRODUTO ITEM 001--------------------------->
+        <div class="product">
+            <img src="./assets/ham01.png" alt="ham01" class="hamburguer">
+
+            <div>
+                <p><strong>Frango Supra</strong></p>
+                <p>Pão brioche, hambúrguer de frango 180g, salada, queijo cheddar, picles de cebola e molho especial</p>
+                
+                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                    <p>R$ 28.00</p>
+                    <button class="btncar" 
+                        data-name="Hambúrguer Frango Supra"
+                        data-price="28.00">
+                        <i class="fa fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    <!--FIM PRODUTO ITEM-->
+
+
+    <!-- INICIO PRODUTO ITEM 002--------------------------->
+    <div class="product">
+        <img src="./assets/ham02.png" alt="ham02" class="hamburguer">
+
+        <div>
+            <p><strong>Pomodoro Burguer</strong></p>
+            <p>Pão brioche, blend bovino de 200g, tomate, queijo prato, rúcula e molho especial</p>
+            
+            <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                <p>R$ 30.00</p>
+                <button class="btncar" 
+                    data-name="Pomodoro Burguer"
+                    data-price="30.00">
+                    <i class="fa fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--FIM PRODUTO ITEM-->
+
+
+    <!-- INICIO PRODUTO ITEM 003--------------------------->
+    <div class="product">
+        <img src="./assets/ham03.png" alt="ham03" class="hamburguer">
+
+        <div>
+            <p><strong>Super churrasco</strong></p>
+            <p>Pão brioche, blend bovino de 180g parrilla, antepasto feito na brasa, queijo cheddar, abacaxi na parrilla e molho especial</p>
+            
+            <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                <p>R$ 35.00</p>
+                <button class="btncar" 
+                    data-name="Super churrasco"
+                    data-price="35.00">
+                    <i class="fa fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--FIM PRODUTO ITEM-->
+
+
+    <!-- INICIO PRODUTO ITEM 004---------------------------->
+    <div class="product">
+        <img src="./assets/ham04.png" alt="ham04" class="hamburguer">
+
+        <div>
+            <p><strong>Parrilla angus</strong></p>
+            <p>Pão brioche, blend angus bovino de 180g, salada, queijo cheddar, picles de pepino e molho especial</p>
+            
+            <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                <p>R$ 32.00</p>
+                <button class="btncar" 
+                    data-name="Parrilla angus"
+                    data-price="32.00">
+                    <i class="fa fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--FIM PRODUTO ITEM-->
+
+    <!-- INICIO PRODUTO ITEM 005---------------------------->
+    <div class="product">
+        <img src="./assets/ham05.png" alt="ham05" class="hamburguer">
+
+        <div>
+            <p><strong>Combo smash</strong></p>
+            <p>Pão brioche especial, smash 180g, salada, queijo cheddar, bacon e molho especial + batata</p>
+            
+            <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                <p>R$ 28.00</p>
+                <button class="btncar" 
+                    data-name="Combo smash"
+                    data-price="28.00">
+                    <i class="fa fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--FIM PRODUTO ITEM-->
+
+
+    <!-- INICIO PRODUTO ITEM 006---------------------------->
+    <div class="product">
+        <img src="./assets/ham06.png" alt="ham01" class="hamburguer">
+
+        <div>
+            <p><strong>Monster cheese</strong></p>
+            <p>Pão brioche, blend de 180g, salada, cheddar, especial blue cheese, picles e molho especial</p>
+            
+            <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                <p>R$ 40.00</p>
+                <button class="btncar" 
+                    data-name="Monster cheese"
+                    data-price="40.00">
+                    <i class="fa fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--FIM PRODUTO ITEM-->
+
+
+    <!-- INICIO PRODUTO ITEM 007---------------------------->
+    <div class="product">
+        <img src="./assets/ham07.png" alt="ham07" class="hamburguer">
+
+        <div>
+            <p><strong>Supreme bacon</strong></p>
+            <p>3 pães brioche, duplo blend bovino de 180g, +bacon, queijo cheddar, picles de beterraba e molho especial</p>
+            
+            <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                <p>R$ 42.00</p>
+                <button class="btncar" 
+                    data-name="Supreme bacon"
+                    data-price="42.00">
+                    <i class="fa fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--FIM PRODUTO ITEM-->
+
+
+    <!-- INICIO PRODUTO ITEM 008---------------------------->
+    <div class="product">
+        <img src="./assets/agua500.png" alt="Agua" class="hamburguer">
+
+        <div>
+            <p><strong>Água s/gás 500ml</strong></p>
+            <p>Água sem gás 500ml marcas</p>
+            
+            <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                <p>R$ 5.00</p>
+                <button class="btncar" d
+                    ata-name="Hambúrguer Frango Supra"
+                    data-price="28.00">
+                    <i class="fa fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--FIM PRODUTO ITEM-->
+
+
+    <!-- INICIO PRODUTO ITEM 008---------------------------->
+    <div class="product">
+        <img src="./assets/sucola.png" alt="juice" class="hamburguer">
+
+        <div>
+            <p><strong>Suco de laranja 700ml</strong></p>
+            <p>Suco natural de laranja 700ml</p>
+            
+            <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                <p>R$ 5.00</p>
+                <button class="btncar" d
+                    ata-name="Suco de laranja 700ml"
+                    data-price="8.00">
+                    <i class="fa fa-cart-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--FIM PRODUTO ITEM-->
+
+
+</main>
+
+<footer>
+    <p>rodape</p>
+</footer>
     
 </body>
 </html>
