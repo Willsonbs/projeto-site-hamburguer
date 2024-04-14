@@ -42,7 +42,7 @@
 
     <!-- INICIO PRODUTO ITEM 001--------------------------->
         <div class="product">
-            <img src="./assets/ham01.png" alt="ham01" class="hamburguer">
+            <img src="./assets/ham01.png" alt="ham01" class="item">
 
             <div>
                 <p><strong>Frango Supra</strong></p>
@@ -63,7 +63,7 @@
 
     <!-- INICIO PRODUTO ITEM 002--------------------------->
     <div class="product">
-        <img src="./assets/ham02.png" alt="ham02" class="hamburguer">
+        <img src="./assets/ham02.png" alt="ham02" class="item">
 
         <div>
             <p><strong>Pomodoro Burguer</strong></p>
@@ -84,7 +84,7 @@
 
     <!-- INICIO PRODUTO ITEM 003--------------------------->
     <div class="product">
-        <img src="./assets/ham03.png" alt="ham03" class="hamburguer">
+        <img src="./assets/ham03.png" alt="ham03" class="item">
 
         <div>
             <p><strong>Super churrasco</strong></p>
@@ -105,7 +105,7 @@
 
     <!-- INICIO PRODUTO ITEM 004---------------------------->
     <div class="product">
-        <img src="./assets/ham04.png" alt="ham04" class="hamburguer">
+        <img src="./assets/ham04.png" alt="ham04" class="item">
 
         <div>
             <p><strong>Parrilla angus</strong></p>
@@ -125,7 +125,7 @@
 
     <!-- INICIO PRODUTO ITEM 005---------------------------->
     <div class="product">
-        <img src="./assets/ham05.png" alt="ham05" class="hamburguer">
+        <img src="./assets/ham05.png" alt="ham05" class="item">
 
         <div>
             <p><strong>Combo smash</strong></p>
@@ -146,7 +146,7 @@
 
     <!-- INICIO PRODUTO ITEM 006---------------------------->
     <div class="product">
-        <img src="./assets/ham06.png" alt="ham01" class="hamburguer">
+        <img src="./assets/ham06.png" alt="ham01" class="item">
 
         <div>
             <p><strong>Monster cheese</strong></p>
@@ -167,7 +167,7 @@
 
     <!-- INICIO PRODUTO ITEM 007---------------------------->
     <div class="product">
-        <img src="./assets/ham07.png" alt="ham07" class="hamburguer">
+        <img src="./assets/ham07.png" alt="ham07" class="item">
 
         <div>
             <p><strong>Supreme bacon</strong></p>
@@ -183,56 +183,99 @@
             </div>
         </div>
     </div>
-    <!--FIM PRODUTO ITEM-->
-
-
-    <!-- INICIO PRODUTO ITEM 008---------------------------->
-    <div class="product">
-        <img src="./assets/agua500.png" alt="Agua" class="hamburguer">
-
-        <div>
-            <p><strong>Água s/gás 500ml</strong></p>
-            <p>Água sem gás 500ml marcas</p>
-            
-            <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                <p>R$ 5.00</p>
-                <button class="btncar" d
-                    ata-name="Hambúrguer Frango Supra"
-                    data-price="28.00">
-                    <i class="fa fa-cart-plus"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-    <!--FIM PRODUTO ITEM-->
-
-
-    <!-- INICIO PRODUTO ITEM 008---------------------------->
-    <div class="product">
-        <img src="./assets/sucola.png" alt="juice" class="hamburguer">
-
-        <div>
-            <p><strong>Suco de laranja 700ml</strong></p>
-            <p>Suco natural de laranja 700ml</p>
-            
-            <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                <p>R$ 5.00</p>
-                <button class="btncar" d
-                    ata-name="Suco de laranja 700ml"
-                    data-price="8.00">
-                    <i class="fa fa-cart-plus"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-    <!--FIM PRODUTO ITEM-->
-
 
 </main>
+    <!--FIM PRODUTO ITEM-->
+    <h2>Bebidas</h2>
+
+    <!--BEBIDAS--------------------------------------------->
+    <!-- INICIO PRODUTO ITEM 008---------------------------->
+    <div class="container02">
+
+        <div class="product">
+            <img src="./assets/agua500.png" alt="Agua" class="item">
+            <div>
+                <p><strong>Água s/gás 500ml</strong></p>
+                <p>Água sem gás 500ml marcas</p>
+        
+                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                    <p>R$ 5.00</p>
+                    <button class="btncar" d
+                        ata-name="Água s/gás 500ml"
+                        data-price="5.00">
+                        <i class="fa fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--FIM PRODUTO ITEM-->
+
+
+        <!-- INICIO PRODUTO ITEM 008---------------------------->
+        <div class="product">
+            <img src="./assets/sucola.png" alt="juice" class="item">
+            <div>
+                <p><strong>Suco de laranja 700ml</strong></p>
+                <p>Suco natural de laranja 700ml</p>
+        
+                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                    <p>R$ 5.00</p>
+                    <button class="btncar" d
+                        ata-name="Suco de laranja 700ml"
+                        data-price="8.00">
+                        <i class="fa fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--FIM PRODUTO ITEM-->
+
+
+
+
+<!--INICIO DO MODAL----------------------------------------->
+
+<div class="modal">
+    
+    <div class="modal-content">
+        <h2>Meu carrinho</h2>
+
+        <div id="cart-items"></div>
+
+        <p id="total">Total: <span>R$ 0.00</span></p>
+
+        <p id="delivery">Endereço de entrega:</p>
+        <input 
+        type="text"
+        placeholder="Digite seu endereço completo..."
+        id="address-delivery"/>
+
+        <p id="delivery-warn">Digite seu endereço completo.</p>
+
+        <div class="checkout">
+            <button id="close-model-btn">Fechar</button>
+            <button id="checkout-btn">Finalizar pedido</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!--FIM DO MODAL-->
+
+
+
+<!--INICIO DO RODAPÉ E BOTAO DO FOOTER---------------------->
 
 <footer>
-    <p>rodape</p>
+    <button id="cart-btn">
+        (<span id="cart-count">2</span>)
+        Confira os itens adicionados 
+        <i class="fa fa-cart-plus"></i>
+    </button>
 </footer>
+<!-- FIM DO RODAPÉ-->
     
 </body>
 </html>
