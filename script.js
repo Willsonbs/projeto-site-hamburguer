@@ -9,6 +9,14 @@ const cartCount = document.getElementById('cart-count')
 const addressInput = document.getElementById('address-delivery')
 const deliveryWarn = document.getElementById('delivery-warn')
 
+// abrir o modal
 cartBtn.addEventListener("click", function () {
     cartModal.style.display = "flex"
 })
+
+// fechar o modal
+cartModal.addEventListener("click", function(event) {
+    if(event.target === cartModal){
+        cartModal.style.display = "none"
+    }
+} )

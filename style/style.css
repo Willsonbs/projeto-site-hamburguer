@@ -271,6 +271,7 @@ footer {
 
 .modal-content > h2 {
     margin: 0;
+    font-family: var(--font-005);
 }
 
 #cart-items {
