@@ -1,6 +1,6 @@
 const menu = document.getElementById('menu')
 const cartBtn = document.getElementById('cart-btn')
-const cartModal = document.getElementById('cart-modal')
+const cartModal = document.getElementById('modal-cart')
 const cartItems = document.getElementsByTagName('cart-items')
 const cartTotal = document.getElementById('total')
 const checkoutBtn = document.getElementById('checkout-btn')
@@ -9,14 +9,16 @@ const cartCount = document.getElementById('cart-count')
 const addressInput = document.getElementById('address-delivery')
 const deliveryWarn = document.getElementById('delivery-warn')
 
-// abrir o modal
-cartBtn.addEventListener("click", function () {
-    cartModal.style.display = "flex"
-})
 
-// fechar o modal
+// Abrir o modal
+cartBtn.addEventListener("click", function () {
+    cartModal.style.display = "flex";
+});
+
+// Fechar o modal ao clicar fora dele
 cartModal.addEventListener("click", function(event) {
-    if(event.target === cartModal){
-        cartModal.style.display = "none"
+    if (event.target === cartModal) {
+        cartModal.style.display = "none";
     }
-} )
+});
+
