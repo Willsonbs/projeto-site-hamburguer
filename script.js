@@ -77,7 +77,7 @@ function updateCart(){
             <div class="item-info">
                 <p class="item-name">${item.name}</p>
                 <p class="item-qtd">un: ${item.quantity}</p>
-                <p class="item-price">R$ ${item.price}</p>
+                <p class="item-price">R$ ${item.price.toFixed(2)}</p>
             </div>
 
             <div>
@@ -86,8 +86,21 @@ function updateCart(){
 
         </div>        
         `
+        total += item.price * item.quantity;
 
         cartItems.appendChild(cartItemElement)
     })
+
+    cartTotal.textContent = total.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL"
+    });
+
+    // Calcula a quantidade total de itens no carrinho
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+
+// Atualiza o contador de itens no carrinho
+    cartCounter.innerHTML = totalItems;
+
 
 }

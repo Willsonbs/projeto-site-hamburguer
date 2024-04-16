@@ -18,14 +18,14 @@
         alt="logo-burguer"
         class="img"/>
 
-        <h1 class="title">Wilson Burguer</h1>
+        <h1 class="title">Will Burguer</h1>
 
-        <span class="address">Rua Albert Sabin, 70 Caruaru - PE
+        <span class="address">Av. Republica do libano, 10 Caruaru - PE
 
         </span>
 
             <div class="horario">
-                <span>Seg à Dom - 17:00 as 23:00</span>
+                <span>Ter à Dom - 17:00 as 23:00</span>
             </div>
 
     </div>
@@ -36,16 +36,18 @@
          Conheça nosso menu
     </h2>
 
+    <h2 class="title-menu">Hamburguers</h2>
+
 <!-- INICIO MENU-->
 
 <div id="menu">
-    <main class="container">
+    <section class="container">
     
         <!-- INICIO PRODUTO ITEM 001--------------------------->
             <div class="product">
                 <img src="./assets/ham01.png" alt="ham01" class="item">
     
-                <div>
+                <div class="grid-item">
                     <p><strong>Frango Supra</strong></p>
                     <p>Pão brioche, hambúrguer de frango 180g, salada, queijo cheddar, picles de cebola e molho especial</p>
     
@@ -66,7 +68,7 @@
         <div class="product">
             <img src="./assets/ham02.png" alt="ham02" class="item">
     
-            <div>
+            <div class="grid-item">
                 <p><strong>Pomodoro Burguer</strong></p>
                 <p>Pão brioche, blend bovino de 200g, tomate, queijo prato, rúcula e molho especial + batata rústica</p>
     
@@ -85,9 +87,9 @@
     
         <!-- INICIO PRODUTO ITEM 003--------------------------->
         <div class="product">
-            <img src="./assets/ham03.png" alt="ham03" class="item">
+            <img src="./assets/ham03.jpg" alt="ham03" class="item">
     
-            <div>
+            <div class="grid-item">
                 <p><strong>Super churrasco</strong></p>
                 <p>Pão brioche, blend bovino de 180g parrilla, antepasto feito na brasa, queijo cheddar, abacaxi na parrilla e molho especial</p>
     
@@ -108,7 +110,7 @@
         <div class="product">
             <img src="./assets/ham04.png" alt="ham04" class="item">
     
-            <div>
+            <div class="grid-item">
                 <p><strong>Parrilla angus</strong></p>
                 <p>Pão brioche, blend angus bovino de 180g, salada, queijo cheddar, picles de pepino e molho especial</p>
     
@@ -128,7 +130,7 @@
         <div class="product">
             <img src="./assets/ham05.png" alt="ham05" class="item">
     
-            <div>
+            <div class="grid-item">
                 <p><strong>Combo smash</strong></p>
                 <p>Pão brioche especial, smash 180g, salada, queijo cheddar, bacon e molho especial + batata</p>
     
@@ -149,7 +151,7 @@
         <div class="product">
             <img src="./assets/ham06.png" alt="ham01" class="item">
     
-            <div>
+            <div class="grid-item">
                 <p><strong>Monster cheese</strong></p>
                 <p>Pão brioche, blend de 180g, salada, cheddar, especial blue cheese, picles e molho especial</p>
     
@@ -170,7 +172,7 @@
         <div class="product">
             <img src="./assets/ham07.png" alt="ham07" class="item">
     
-            <div>
+            <div class="grid-item">
                 <p><strong>Supreme bacon</strong></p>
                 <p>3 pães brioche, duplo blend bovino de 180g, +bacon, queijo cheddar, picles de beterraba e molho especial</p>
     
@@ -184,53 +186,92 @@
                 </div>
             </div>
         </div>
+        
     
-    </main>
-        <!--FIM PRODUTO ITEM-->
+    </section>
+
+
+
+    <section>
         <h2 class="title-menu">Bebidas</h2>
+    </section>
+
+    <div class="container">
+
+        <div class="product">
+            <img src="./assets/agua500.png" alt="agua" class="item">
     
-        <!--BEBIDAS--------------------------------------------->
-        <!-- INICIO PRODUTO ITEM 008---------------------------->
-        <div class="container02">
+            <div class="grid-item">
+                <p><strong>Agua sem gás 500ml</strong></p>
+                <p></p>
     
-            <div class="product">
-                <img src="./assets/agua500.png" alt="Agua" class="item">
-                <div>
-                    <p><strong>Água s/gás 500ml</strong></p>
-                    <p>Água sem gás 500ml marcas</p>
-    
-                    <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                        <p>R$ 5.00</p>
-                        <button class="btncar" d
-                            ata-name="Água s/gás 500ml"
-                            data-price="5.00">
-                            <i class="fa fa-cart-plus"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--FIM PRODUTO ITEM-->
-    
-    
-            <!-- INICIO PRODUTO ITEM 008---------------------------->
-            <div class="product">
-                <img src="./assets/sucola.png" alt="juice" class="item">
-                <div>
-                    <p><strong>Suco de laranja 700ml</strong></p>
-                    <p>Suco natural de laranja 700ml</p>
-    
-                    <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                        <p>R$ 5.00</p>
-                        <button class="btncar" d
-                            ata-name="Suco de laranja 700ml"
-                            data-price="8.00">
-                            <i class="fa fa-cart-plus"></i>
-                        </button>
-                    </div>
+                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                    <p>R$ 5.00</p>
+                    <button class="btncar"
+                        data-name="Agua sem gás 500ml"
+                        data-price="5.00">
+                        <i class="fa fa-cart-plus"></i>
+                    </button>
                 </div>
             </div>
         </div>
+
+        <div class="product">
+            <img src="./assets/coca-lata-350ml.jpg" alt="coca lata" class="item">
+    
+            <div class="grid-item">
+                <p><strong>Coca cola lata 350ml</strong></p>
+                <p></p>
+    
+                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                    <p>R$ 7.00</p>
+                    <button class="btncar"
+                        data-name="Coca cola lata 350ml"
+                        data-price="7.00">
+                        <i class="fa fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="./assets/sucola.png" alt="suco de laranja" class="item">
+    
+            <div class="grid-item">
+                <p><strong>Suco de laranja 500ml</strong></p>
+                <p></p>
+    
+                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
+                    <p>R$ 6.00</p>
+                    <button class="btncar"
+                        data-name="Suco de laranja"
+                        data-price="6.00">
+                        <i class="fa fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+
+
+
+
+
+    </div>
+
+    
+
+    
+        
+    
+        
+       
+            
 </div>
+
     <!--FIM PRODUTO ITEM-->
     <!--FIM MENU-->
 
