@@ -7,29 +7,21 @@
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
     <title>Projeto Hamburgueria</title>
 </head>
 <body>
     
 <header class="header">
-
     <div>
-        <img src="./assets/logo.png" 
-        alt="logo-burguer"
-        class="img"/>
-
+        <img src="./assets/logo.png" alt="logo-burguer" class="img"/>
         <h1 class="title">Will Burguer</h1>
-
-        <span class="address">Av. Republica do libano, 10 Caruaru - PE
-
-        </span>
-
-            <div class="horario">
-                <span>Ter à Dom - 17:00 as 23:00</span>
-            </div>
-
+        <span class="address">Av. Republica do libano, 10 Caruaru - PE</span>
+        <div class="horario" id="date-span">
+            <span>Ter à Dom - 17:00 as 23:00</span>
+        </div>
     </div>
-
 </header>
 
     <h2 class="title-menu">
@@ -293,7 +285,7 @@
         placeholder="Digite seu endereço completo..."
         id="address-delivery"/>
 
-        <p id="delivery-warn">Digite seu endereço completo.</p>
+        <p id="address-warn">Por favor preencha o campo endereço.</p>
 
         <div class="checkout">
             <button id="close-modal-btn">Fechar</button>
@@ -319,7 +311,7 @@
 </footer>
 <!-- FIM DO RODAPÉ-->
     
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="script.js"></script>
 
 </body>

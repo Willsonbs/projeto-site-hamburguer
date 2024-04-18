@@ -69,7 +69,8 @@ body {
     background-position: left bottom;
     background-size: cover;
     width: 100%;
-    height: 360px;  
+    height: 360px;
+    padding: 20px;  
 
 }
 
@@ -81,16 +82,16 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 
 .img {
-    
     margin-top: 1.5rem;
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    box-shadow: 0px 0px 1px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -98,10 +99,11 @@ body {
     font-family: var(--font-003);
     font-size: 2.875em;
     line-height: 2.25em;
-    margin-top: 0;
+    margin-top: 0.5rem 0;
     color: var(--color-004);
     
 }
+
 
 @media only screen and (max-width: 475px) {
     .title {
@@ -115,19 +117,27 @@ body {
     color: var(--color-004);
     font-family: var(--font-003);
     font-size: 1rem;
-    text-shadow: 1px 1px 5px black;
-    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 0.3rem 0;
+    
 
+}
+
+.horario {
+    color: var(--color-004);
+    font-family: var(--font-004);
+    font-size: 1rem;
+    margin: 0.3rem 0;
 }
 
 
 .horario > span {
-    background-color: #1cce1ccd;
-    color: var(--color-001);
-    margin: 0.1rem;
-    padding: 0.3rem;
-    border-radius: 3px;
+    /*background-color: #1cce1ccd;*/
+    color: var(--color-004);
     font-family: var(--font-004);
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    display: inline-block;
 }
 
 
@@ -289,7 +299,8 @@ footer {
     border-width: 2px;
     margin-top: 3px;
     margin-bottom: 4px;;
-    font-size: 0.9rem; 
+    font-size: 0.9rem;
+    
 }
 
 
@@ -299,6 +310,8 @@ footer {
     margin-top: 3px;
     display: none;
     font: bold;
+    display: none;
+    
 }
 
 
@@ -420,6 +433,7 @@ footer {
 .remove-button:hover {
     transform: scale(1.1);
 }
+
 
 
 
