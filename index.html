@@ -3,314 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Will Burguer — Cardápio digital com hambúrguers artesanais e bebidas. Faça seu pedido pelo WhatsApp.">
     <link rel="stylesheet" href="style/style.css">
-
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
-    <title>Projeto Hamburgueria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <title>Will Burguer — Hamburgueria</title>
 </head>
 <body>
-    
+
 <header class="header">
     <div>
-        <img src="./assets/logo.png" alt="logo-burguer" class="img"/>
+        <img src="./assets/logo.png" alt="Logotipo Will Burguer" class="img"/>
         <h1 class="title">Will Burguer</h1>
-        <span class="address">Av. Republica do libano, 10 Caruaru - PE</span>
+        <span class="address">Av. República do Líbano, 10 — Caruaru - PE</span>
         <div class="horario" id="date-span">
-            <span>Ter à Dom - 17:00 as 23:00</span>
+            <span>Ter à Dom — 17:00 às 23:00</span>
         </div>
     </div>
 </header>
 
-    <h2 class="title-menu">
-         Conheça nosso menu
-    </h2>
+<main id="menu">
 
-    <h2 class="title-menu">Hamburguers</h2>
+    <!-- ===== HAMBÚRGUERS ===== -->
+    <h2 class="title-menu">Hambúrguers</h2>
 
-<!-- INICIO MENU-->
+    <section class="container" aria-label="Cardápio de hambúrguers">
 
-<div id="menu">
-    <section class="container">
-    
-        <!-- INICIO PRODUTO ITEM 001--------------------------->
-            <div class="product">
-                <img src="./assets/ham01.png" alt="ham01" class="item">
-    
-                <div class="grid-item">
-                    <p><strong>Frango Supra</strong></p>
-                    <p>Pão brioche, hambúrguer de frango 180g, salada, queijo cheddar, picles de cebola e molho especial</p>
-    
-                    <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                        <p>R$ 28.00</p>
-                        <button class="btncar"
-                            data-name="Hambúrguer Frango Supra"
-                            data-price="28.00">
-                            <i class="fa fa-cart-plus"></i>
-                        </button>
-                    </div>
+        <article class="product">
+            <img src="./assets/ham01.png" alt="Frango Supra" class="item">
+            <div class="grid-item">
+                <p><strong>Frango Supra</strong></p>
+                <p>Pão brioche, hambúrguer de frango 180g, salada, queijo cheddar, picles de cebola e molho especial</p>
+                <div class="control-btncar">
+                    <p>R$ 28,00</p>
+                    <button class="btncar" data-name="Frango Supra" data-price="28.00" aria-label="Adicionar Frango Supra ao carrinho">
+                        <i class="fa fa-cart-plus"></i>
+                    </button>
                 </div>
             </div>
-        <!--FIM PRODUTO ITEM-->
-    
-    
-        <!-- INICIO PRODUTO ITEM 002--------------------------->
-        <div class="product">
-            <img src="./assets/ham02.png" alt="ham02" class="item">
-    
+        </article>
+
+        <article class="product">
+            <img src="./assets/ham02.png" alt="Pomodoro Burguer" class="item">
             <div class="grid-item">
                 <p><strong>Pomodoro Burguer</strong></p>
                 <p>Pão brioche, blend bovino de 200g, tomate, queijo prato, rúcula e molho especial + batata rústica</p>
-    
-                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                    <p>R$ 30.00</p>
-                    <button class="btncar"
-                        data-name="Pomodoro Burguer"
-                        data-price="30.00">
+                <div class="control-btncar">
+                    <p>R$ 30,00</p>
+                    <button class="btncar" data-name="Pomodoro Burguer" data-price="30.00" aria-label="Adicionar Pomodoro Burguer ao carrinho">
                         <i class="fa fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
-        </div>
-        <!--FIM PRODUTO ITEM-->
-    
-    
-        <!-- INICIO PRODUTO ITEM 003--------------------------->
-        <div class="product">
-            <img src="./assets/ham03.jpg" alt="ham03" class="item">
-    
+        </article>
+
+        <article class="product">
+            <img src="./assets/ham03.jpg" alt="Super Churrasco" class="item">
             <div class="grid-item">
-                <p><strong>Super churrasco</strong></p>
+                <p><strong>Super Churrasco</strong></p>
                 <p>Pão brioche, blend bovino de 180g parrilla, antepasto feito na brasa, queijo cheddar, abacaxi na parrilla e molho especial</p>
-    
-                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                    <p>R$ 35.00</p>
-                    <button class="btncar"
-                        data-name="Super churrasco"
-                        data-price="35.00">
+                <div class="control-btncar">
+                    <p>R$ 35,00</p>
+                    <button class="btncar" data-name="Super Churrasco" data-price="35.00" aria-label="Adicionar Super Churrasco ao carrinho">
                         <i class="fa fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
-        </div>
-        <!--FIM PRODUTO ITEM-->
-    
-    
-        <!-- INICIO PRODUTO ITEM 004---------------------------->
-        <div class="product">
-            <img src="./assets/ham04.png" alt="ham04" class="item">
-    
+        </article>
+
+        <article class="product">
+            <img src="./assets/ham04.png" alt="Parrilla Angus" class="item">
             <div class="grid-item">
-                <p><strong>Parrilla angus</strong></p>
+                <p><strong>Parrilla Angus</strong></p>
                 <p>Pão brioche, blend angus bovino de 180g, salada, queijo cheddar, picles de pepino e molho especial</p>
-    
-                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                    <p>R$ 32.00</p>
-                    <button class="btncar"
-                        data-name="Parrilla angus"
-                        data-price="32.00">
+                <div class="control-btncar">
+                    <p>R$ 32,00</p>
+                    <button class="btncar" data-name="Parrilla Angus" data-price="32.00" aria-label="Adicionar Parrilla Angus ao carrinho">
                         <i class="fa fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
-        </div>
-        <!--FIM PRODUTO ITEM-->
-    
-        <!-- INICIO PRODUTO ITEM 005---------------------------->
-        <div class="product">
-            <img src="./assets/ham05.png" alt="ham05" class="item">
-    
+        </article>
+
+        <article class="product">
+            <img src="./assets/ham05.png" alt="Combo Smash" class="item">
             <div class="grid-item">
-                <p><strong>Combo smash</strong></p>
+                <p><strong>Combo Smash</strong></p>
                 <p>Pão brioche especial, smash 180g, salada, queijo cheddar, bacon e molho especial + batata</p>
-    
-                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                    <p>R$ 28.00</p>
-                    <button class="btncar"
-                        data-name="Combo smash"
-                        data-price="28.00">
+                <div class="control-btncar">
+                    <p>R$ 28,00</p>
+                    <button class="btncar" data-name="Combo Smash" data-price="28.00" aria-label="Adicionar Combo Smash ao carrinho">
                         <i class="fa fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
-        </div>
-        <!--FIM PRODUTO ITEM-->
-    
-    
-        <!-- INICIO PRODUTO ITEM 006---------------------------->
-        <div class="product">
-            <img src="./assets/ham06.png" alt="ham01" class="item">
-    
+        </article>
+
+        <article class="product">
+            <img src="./assets/ham06.png" alt="Monster Cheese" class="item">
             <div class="grid-item">
-                <p><strong>Monster cheese</strong></p>
+                <p><strong>Monster Cheese</strong></p>
                 <p>Pão brioche, blend de 180g, salada, cheddar, especial blue cheese, picles e molho especial</p>
-    
-                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                    <p>R$ 40.00</p>
-                    <button class="btncar"
-                        data-name="Monster cheese"
-                        data-price="40.00">
+                <div class="control-btncar">
+                    <p>R$ 40,00</p>
+                    <button class="btncar" data-name="Monster Cheese" data-price="40.00" aria-label="Adicionar Monster Cheese ao carrinho">
                         <i class="fa fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
-        </div>
-        <!--FIM PRODUTO ITEM-->
-    
-    
-        <!-- INICIO PRODUTO ITEM 007---------------------------->
-        <div class="product">
-            <img src="./assets/ham07.png" alt="ham07" class="item">
-    
+        </article>
+
+        <article class="product">
+            <img src="./assets/ham07.png" alt="Supreme Bacon" class="item">
             <div class="grid-item">
-                <p><strong>Supreme bacon</strong></p>
+                <p><strong>Supreme Bacon</strong></p>
                 <p>3 pães brioche, duplo blend bovino de 180g, +bacon, queijo cheddar, picles de beterraba e molho especial</p>
-    
-                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                    <p>R$ 42.00</p>
-                    <button class="btncar"
-                        data-name="Supreme bacon"
-                        data-price="42.00">
+                <div class="control-btncar">
+                    <p>R$ 42,00</p>
+                    <button class="btncar" data-name="Supreme Bacon" data-price="42.00" aria-label="Adicionar Supreme Bacon ao carrinho">
                         <i class="fa fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
-        </div>
-        
-    
+        </article>
+
     </section>
 
+    <!-- ===== BEBIDAS ===== -->
+    <h2 class="title-menu">Bebidas</h2>
 
+    <section class="container" aria-label="Cardápio de bebidas">
 
-    <section>
-        <h2 class="title-menu">Bebidas</h2>
-    </section>
-
-    <div class="container">
-
-        <div class="product">
-            <img src="./assets/agua500.png" alt="agua" class="item">
-    
+        <article class="product">
+            <img src="./assets/agua500.png" alt="Água sem gás 500ml" class="item">
             <div class="grid-item">
-                <p><strong>Agua sem gás 500ml</strong></p>
+                <p><strong>Água sem gás 500ml</strong></p>
                 <p></p>
-    
-                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                    <p>R$ 5.00</p>
-                    <button class="btncar"
-                        data-name="Agua sem gás 500ml"
-                        data-price="5.00">
+                <div class="control-btncar">
+                    <p>R$ 5,00</p>
+                    <button class="btncar" data-name="Água sem gás 500ml" data-price="5.00" aria-label="Adicionar Água sem gás ao carrinho">
                         <i class="fa fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <div class="product">
-            <img src="./assets/coca-lata-350ml.jpg" alt="coca lata" class="item">
-    
+        <article class="product">
+            <img src="./assets/coca-lata-350ml.jpg" alt="Coca-Cola lata 350ml" class="item">
             <div class="grid-item">
-                <p><strong>Coca cola lata 350ml</strong></p>
+                <p><strong>Coca-Cola lata 350ml</strong></p>
                 <p></p>
-    
-                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                    <p>R$ 7.00</p>
-                    <button class="btncar"
-                        data-name="Coca cola lata 350ml"
-                        data-price="7.00">
+                <div class="control-btncar">
+                    <p>R$ 7,00</p>
+                    <button class="btncar" data-name="Coca-Cola lata 350ml" data-price="7.00" aria-label="Adicionar Coca-Cola ao carrinho">
                         <i class="fa fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
-        </div>
+        </article>
 
-        <div class="product">
-            <img src="./assets/sucola.png" alt="suco de laranja" class="item">
-    
+        <article class="product">
+            <img src="./assets/sucola.png" alt="Suco de laranja 500ml" class="item">
             <div class="grid-item">
                 <p><strong>Suco de laranja 500ml</strong></p>
                 <p></p>
-    
-                <div class="control-btncar"> <!-- controle valor e botão de adicionar-->
-                    <p>R$ 6.00</p>
-                    <button class="btncar"
-                        data-name="Suco de laranja"
-                        data-price="6.00">
+                <div class="control-btncar">
+                    <p>R$ 6,00</p>
+                    <button class="btncar" data-name="Suco de laranja 500ml" data-price="6.00" aria-label="Adicionar Suco de laranja ao carrinho">
                         <i class="fa fa-cart-plus"></i>
                     </button>
                 </div>
             </div>
-        </div>
+        </article>
 
-        
+    </section>
 
-        
+</main>
 
-
-
-
-
-    </div>
-
-    
-
-    
-        
-    
-        
-       
-            
-</div>
-
-    <!--FIM PRODUTO ITEM-->
-    <!--FIM MENU-->
-
-
-<!--INICIO DO MODAL----------------------------------------->
-
-<div class="modal" id="modal-cart">
-    
+<!-- ===== MODAL DO CARRINHO ===== -->
+<div class="modal" id="modal-cart" role="dialog" aria-modal="true" aria-label="Carrinho de compras">
     <div class="modal-content">
         <h2>Meu carrinho</h2>
-
         <div id="cart-items"></div>
-
-        <p id="total">Total: <span>R$ 0.00</span></p>
-
+        <p id="total">Total: <span>R$ 0,00</span></p>
         <p class="delivery">Endereço de entrega:</p>
-        <input 
-        type="text"
-        placeholder="Digite seu endereço completo..."
-        id="address-delivery"/>
-
-        <p id="address-warn">Por favor preencha o campo endereço.</p>
-
+        <input
+            type="text"
+            placeholder="Digite seu endereço completo..."
+            id="address-delivery"
+            aria-label="Endereço de entrega"/>
+        <p id="address-warn" role="alert">Por favor preencha o campo endereço.</p>
         <div class="checkout">
             <button id="close-modal-btn">Fechar</button>
             <button id="checkout-btn">Finalizar pedido</button>
         </div>
-
     </div>
-
 </div>
 
-<!--FIM DO MODAL-->
-
-
-
-<!--INICIO DO RODAPÉ E BOTAO DO FOOTER---------------------->
-
+<!-- ===== FOOTER ===== -->
 <footer>
-    <button id="cart-btn">
+    <button id="cart-btn" aria-label="Ver carrinho">
         (<span id="cart-count">0</span>)
-        Confira os itens adicionados 
+        Confira os itens adicionados
         <i class="fa fa-cart-plus"></i>
     </button>
 </footer>
-<!-- FIM DO RODAPÉ-->
-    
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="script.js"></script>
 

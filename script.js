@@ -1,3 +1,15 @@
+// ===================================================
+// Will Burguer — Lógica do Carrinho e Pedido
+// ===================================================
+
+// Configurações da loja
+const STORE_CONFIG = {
+    phone: "5562981989026",        // Número WhatsApp (DDI + DDD + número)
+    openHour: 17,                  // Hora de abertura
+    closeHour: 23,                 // Hora de fechamento
+};
+
+// Referências ao DOM
 const menu = document.getElementById('menu');
 const cartBtn = document.getElementById('cart-btn');
 const cartModal = document.getElementById('modal-cart');
@@ -10,65 +22,91 @@ const addressInput = document.getElementById('address-delivery');
 const addressWarn = document.getElementById('address-warn');
 const spanItem = document.getElementById('date-span');
 
+// Estado do carrinho
 let cart = [];
 
-// Abrir o modal do carrinho
+// ===================================================
+// MODAL
+// ===================================================
+
 cartBtn.addEventListener("click", function () {
-    updateCart();
+    updateCartUI();
     cartModal.style.display = "flex";
 });
 
-// Fechar o modal do carrinho clicando fora dele
-cartModal.addEventListener("click", function(event){
-    if(event.target === cartModal){
+cartModal.addEventListener("click", function (event) {
+    if (event.target === cartModal) {
         cartModal.style.display = "none";
     }
 });
 
-// Fechar o modal clicando no botão de fechar
-closeModalBtn.addEventListener("click", function(){
+closeModalBtn.addEventListener("click", function () {
     cartModal.style.display = "none";
 });
 
-// Adicionar item ao carrinho ao clicar no menu
-menu.addEventListener("click", function(event) {
-    let parentButton = event.target.closest(".btncar");
-    if(parentButton){
+// ===================================================
+// CARRINHO — ADICIONAR / REMOVER
+// ===================================================
+
+menu.addEventListener("click", function (event) {
+    const parentButton = event.target.closest(".btncar");
+    if (parentButton) {
         const name = parentButton.getAttribute("data-name");
         const price = parseFloat(parentButton.getAttribute("data-price"));
         addToCart(name, price);
     }
 });
 
-// Função para adicionar item ao carrinho
-function addToCart(name, price){
+function addToCart(name, price) {
     const existItem = cart.find(item => item.name === name);
 
-    if(existItem){
+    if (existItem) {
         existItem.quantity += 1;
     } else {
-        cart.push({
-            name: name,
-            price: price,
-            quantity: 1,
-        });
+        cart.push({ name, price, quantity: 1 });
     }
 
-    updateCart();
+    updateCartUI();
 }
 
-// Atualiza o carrinho
-function updateCart(){
+cartItems.addEventListener("click", function (event) {
+    if (event.target.classList.contains("remove-button")) {
+        const name = event.target.getAttribute("data-name");
+        removeFromCart(name);
+    }
+});
+
+function removeFromCart(name) {
+    const index = cart.findIndex(item => item.name === name);
+
+    if (index === -1) return;
+
+    const item = cart[index];
+
+    if (item.quantity > 1) {
+        item.quantity -= 1;
+    } else {
+        cart.splice(index, 1);
+    }
+
+    updateCartUI();
+}
+
+// ===================================================
+// ATUALIZAR UI DO CARRINHO
+// ===================================================
+
+function updateCartUI() {
     cartItems.innerHTML = "";
     let total = 0;
 
     cart.forEach(item => {
         const cartItemElement = document.createElement("div");
-        cartItemElement.innerHTML = `       
+        cartItemElement.innerHTML = `
         <div class="cart-item">
             <div class="item-info">
                 <p class="item-name">${item.name}</p>
-                <p class="item-qtd">un: ${item.quantity}</p>
+                <p class="item-qtd">Qtd: ${item.quantity}</p>
                 <p class="item-price">R$ ${item.price.toFixed(2)}</p>
             </div>
             <div>
@@ -84,109 +122,63 @@ function updateCart(){
         currency: "BRL"
     });
 
-    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-    cartCounter.innerHTML = totalItems;
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartCounter.textContent = totalItems;
 }
 
-// Função para remover item do carrinho
-cartItems.addEventListener("click", function (event) {
-    if(event.target.classList.contains("remove-button")) {
-        const name = event.target.getAttribute("data-name");
-        removeItemCart(name);
-    }
-});
+// ===================================================
+// FINALIZAR PEDIDO — WHATSAPP
+// ===================================================
 
-function removeItemCart(name){
-    const index = cart.findIndex(item => item.name === name);
+checkoutBtn.addEventListener("click", function () {
+    if (cart.length === 0) return;
 
-    if(index !== -1){
-        const item = cart[index];
-
-        if(item.quantity > 1) {
-            item.quantity -= 1;
-            updateCart();
-            return;
-        }
-
-        cart.splice(index, 1);
-        updateCart();
-    }
-}
-
-
-checkoutBtn.addEventListener("click", function() {
-    
-    
-    //verificar se a loja está aberta
-    if (cart.length === 0) return; 
-    if (addressInput.value === "") {
+    if (addressInput.value.trim() === "") {
         addressWarn.style.display = "block";
         return;
-    } else {
-        addressWarn.style.display = "none"; 
-       
-        // Coloque aqui o código para finalizar o pedido se o endereço estiver preenchido
-        
     }
 
-    //verificar se a loja está aberta
-    const isOpen = checkOpenClose();
-    if(!isOpen) {
+    addressWarn.style.display = "none";
+
+    if (!isStoreOpen()) {
         Toastify({
             text: "Olá, no momento estamos fechados!",
             duration: 3000,
             close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "right", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
-            style: {
-              background: "#ff0000"
-            },
-            onClick: function(){} // Callback after click
-          }).showToast();
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: { background: "#ff0000" },
+        }).showToast();
         return;
     }
 
-    //verificar se há items no carrinho
-    if (cart.length === 0) return;
+    const cartText = cart.map(item =>
+        `${item.name} - Qtd: (${item.quantity}) - R$ ${item.price.toFixed(2)}`
+    ).join(" | ");
 
-
-    //enviar o pedido para api WhatsApp
-    const cartItemsText = cart.map((item) => {
-        return (
-            `${item.name} - Quantidade:(${item.quantity}) - Preço: R$${item.price} | `
-        )
-    }).join("")
-
-    //console.log("Items: " + cartItemsText);
-
-    const message = encodeURIComponent(cartItemsText)
-    const phone = "5562981989026"
-    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`, "_blank")
+    const message = encodeURIComponent(`${cartText} | Endereço: ${addressInput.value.trim()}`);
+    window.open(`https://wa.me/${STORE_CONFIG.phone}?text=${message}`, "_blank");
 
     cart = [];
-    updateCart();
-   
-    
-})
-
-// Verificar se a loja está aberta ou fechada
-function checkOpenClose() {
-    const data = new Date();
-    const hour = data.getHours();
-    return hour >= 17 && hour < 23;
-}
-
-// Atualizar a cor do span de acordo com o status de abertura da loja
-const isOpen = checkOpenClose();
-spanItem.style.backgroundColor = isOpen ? "#1cce1ccd" : "#ff0000b0";
-spanItem.style.borderRadius = "3px";
-
-// Atualizar aviso de endereço conforme o usuário digita
-addressInput.addEventListener("input", function(event) {
-    let inputValue = event.target.value;
-    addressWarn.style.display = inputValue.length > 0 ? "none" : "block";
+    updateCartUI();
+    cartModal.style.display = "none";
 });
 
-// Finalizar pedido
+// ===================================================
+// STATUS DA LOJA (ABERTO / FECHADO)
+// ===================================================
 
+function isStoreOpen() {
+    const hour = new Date().getHours();
+    return hour >= STORE_CONFIG.openHour && hour < STORE_CONFIG.closeHour;
+}
+
+// Atualizar cor do indicador de horário
+spanItem.style.backgroundColor = isStoreOpen() ? "#1cce1ccd" : "#ff0000b0";
+spanItem.style.borderRadius = "3px";
+
+// Validação do campo de endereço em tempo real
+addressInput.addEventListener("input", function (event) {
+    addressWarn.style.display = event.target.value.trim().length > 0 ? "none" : "block";
+});

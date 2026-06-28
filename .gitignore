@@ -1,0 +1,25 @@
+# Dependências
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
